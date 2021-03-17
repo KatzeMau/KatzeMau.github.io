@@ -2,47 +2,37 @@
 <p>&nbsp;</p>
 <p> Work in progress</p>
 <head> 
-	
-
-	<script> 
-		/* Add "https://api.ipify.org?format=json" statement 
-		this will communicate with the ipify servers in 
-		order to retrieve the IP address $.getJSON will 
-		load JSON-encoded data from the server using a 
-		GET HTTP request */ 
-
-		$.getJSON("https://api.ipify.org?format=json", 
-										function(data) { 
-
-			// Setting text of element P with id gfg 
-			$("#gfg").html(data.ip); 
-		}) 
-	</script> 
-
-<body> 
-	<center> 
-		<p id="gfg"></p> 
-	</center> 
-</body> 
-
-
-
 <p>Dont like <a href="https://TheCatCloud.de">TheCatCloud.de?</a></p>
-<p>or <a href="https://spain.thecatcloud.de">Spain.TheCatCloud.de?</a></p>
+<p>or <a href="https://spain.thecatcloud.de">Spain.TheCatCloud.de? (Btw. A very cool page that shows some pictures made by me :)</a></p>
 <p>No Problem we got you, Welcome to the CatCloudPages!</p>
 <title>Getting Clients IP</title> 
-</script> 
-</head> 
-	<style> 
-	</style> 
-	<script src="https://spain.thecatcloud.de/visitorIPHOST.js.php"> 
-	</script> 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>javascript get ip address of client</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://api.ipify.org?format=jsonp&callback=DisplayIP";
+            document.getElementsByTagName("head")[0].appendChild(script);
+        };
+        function DisplayIP(response) {
+            document.getElementById("ipaddress").innerHTML = "Just for a quick look, you are from: " + response.ip;
+        }
+    </script>
+</head>
+<body>
+    <span id="ipaddress"></span>
+</body>
 
+<br>
 <br>
 
 <a href="mailto:Administration@thecatcloud.de">Mail for Impressum or other problems</a>
 </body>
 </html>
+
 
 
 
